@@ -1,0 +1,49 @@
+body {
+  font-family: Google Sans, arial, sans-serif;
+}
+h1 {
+  color: #202124;
+  font-size: 34px;
+}
+ul {
+  margin: 0 0 20px;
+  padding: 0;
+}
+li {
+  color: #202124;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  list-style: none;
+}
+.city {
+  font-size: 30px;
+  padding: 10px;
+  padding-left: 0;
+}
+.container {
+  background-color: #edf4ff;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 650px;
+  padding: 20px;
+}
+
+.fa-cloud-sun-rain {
+  font-size: 50px;
+  color: rgb(59, 25, 226);
+}
+.fa-bolt {
+  font-size: 50px;
+  color: yellow;
+}
+.temperature {
+  font-size: 50px;
+}
+.weather-icon {
+  vertical-align: bottom;
+}
+.degree {
+  position: relative;
+  top: -25px;
+}

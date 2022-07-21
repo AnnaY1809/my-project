@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src\styles.css" />
+
+    <script
+      src="https://kit.fontawesome.com/a11358e495.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>HomeWork</title>
+  </head>
+  <body>
+    <div class="container">
+      <span class="border border-light"></span>
+      <h1>Today's Forecast</h1>
+      <form class="row" id="cityForm">
+        <div class="col-6">
+          <label for="inputCity" class="visually-hidden">City</label>
+          <input
+            type="text"
+            class="form-control shadow-sm"
+            id="inputCity2"
+            placeholder="City"
+          />
+        </div>
+        <div class="col-2">
+          <button type="submit" class="btn btn-primary mb-3">Search</button>
+        </div>
+        <div class="col-3">
+          <button type="button" class="btn btn-primary" id="currentPosition">
+            Current
+          </button>
+        </div>
+      </form>
+      <ul>
+        <li class="city" id="searchCity">Stockholm</li>
+        <li id="currentTime">Friday, 10 Jun, 10:49</li>
+      </ul>
+      <div class="row">
+        <div class="col-6">
+          <div class="float-left">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="cloudy icon"
+              class="weather-icon float-left"
+            />
+            <span class="temperature" id="temperature"> 19</span>
+
+            <span class="degree">
+              <a href="#" id="celsius">°C</a> /
+              <a href="#" id="fahrenheit">°F</a>
+            </span>
+          </div>
+        </div>
+        <div class="col-6">
+          <ul>
+            <li id="cloud">Partly cloudy</li>
+            <li id="humidity">Humidity: 77%</li>
+            <li id="wind">Wind: 8km/h</li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col">
+            Saturday
+            <p>12°C</p>
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+            />
+          </div>
+          <div class="col">
+            Sunday
+            <p>12°C</p>
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+            />
+          </div>
+          <div class="col">
+            Monday
+            <p>12°C</p>
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+            />
+          </div>
+          <div class="col">
+            Tusday
+            <p>12°C</p>
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+            />
+          </div>
+          <div class="col">
+            Wednesday
+            <p>12°C</p>
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+            />
+          </div>
+          <div class="col">
+            Thursday
+            <p>12°C</p>
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src\index.js"></script>
+  </body>
+</html>
