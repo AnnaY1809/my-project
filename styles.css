@@ -27,6 +27,7 @@ li {
   margin: 20px auto;
   max-width: 650px;
   padding: 20px;
+  margin-bottom: 0;
 }
 
 .fa-cloud-sun-rain {
@@ -46,4 +47,9 @@ li {
 .degree {
   position: relative;
   top: -25px;
+}
+.sourceLink {
+  max-width: 650px;
+  margin: auto;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
