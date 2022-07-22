@@ -47,7 +47,6 @@ function showCloud(response) {
   let messageC = `${cloud}`;
   let cloudC = document.querySelector("#cloud");
   cloudC.innerHTML = messageC;
-  console.log(response);
 }
 
 function showTemperature(response) {
@@ -56,6 +55,11 @@ function showTemperature(response) {
   let message = `${temperature}`;
   let tempC = document.querySelector("#temperature");
   tempC.innerHTML = message;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function search(event) {
