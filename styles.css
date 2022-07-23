@@ -53,3 +53,14 @@ li {
   margin: auto;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+.active {
+  color: #202124;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+}
+.degree-celsius {
+  text-decoration: none;
+}

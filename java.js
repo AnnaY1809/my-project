@@ -55,6 +55,7 @@ function showTemperature(response) {
   let message = `${temperature}`;
   let tempC = document.querySelector("#temperature");
   tempC.innerHTML = message;
+  tempCelsius = response.data.main.temp;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -84,22 +85,27 @@ function searchCity(city) {
 let form = document.querySelector("#cityForm");
 form.addEventListener("submit", search);
 
-function celsius(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = tempC;
-}
-
 function fahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  let tempF = Math.round(tempC * 1.8 + 32);
+  degreeCelsius.classList.remove("active");
+  degreeFahrenheit.classList.add("active");
+  let tempF = Math.round(tempCelsius * 1.8 + 32);
   temperature.innerHTML = tempF;
 }
+function celsius(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  degreeCelsius.classList.add("active");
+  degreeFahrenheit.classList.remove("active");
+  temperature.innerHTML = Math.round(tempCelsius);
+}
+
+let tempCelsius = null;
 
 let degreeCelsius = document.querySelector("#celsius");
 let degreeFahrenheit = document.querySelector("#fahrenheit");
-let tempC = 20;
+
 degreeCelsius.addEventListener("click", celsius);
 degreeFahrenheit.addEventListener("click", fahrenheit);
 
