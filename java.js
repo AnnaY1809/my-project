@@ -30,22 +30,34 @@ function formatDate(timestamp) {
   return `${day} ${date} ${month} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
+  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
           <div class="col-2">
-            ${forecastDay.dt}
-            <p>${forecastDay.temp.day} C</p>
+            ${formatDay(forecastDay.dt)}
+            <p>${Math.round(forecastDay.temp.day)} C</p>
             <img
-              src="http://openweathermap.org/img/wn/${forecastDay.data.weather[0].icon}@2x.png"
+              src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"
             />
           </div> `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -72,6 +84,7 @@ function showWind(response) {
   let messageW = `Wind: ${wind} km/h`;
   let windW = document.querySelector("#wind");
   windW.innerHTML = messageW;
+
   getForecast(response.data.coord);
 }
 
@@ -172,5 +185,3 @@ function getCurrentPosition(event) {
 
 let button = document.querySelector("#currentPosition");
 button.addEventListener("click", getCurrentPosition);
-
-displayForecast();
