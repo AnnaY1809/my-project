@@ -31,19 +31,19 @@ function formatDate(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
           <div class="col-2">
-            ${day}
-            <p>12°C</p>
+            ${forecastDay.dt}
+            <p>${forecastDay.temp.day} C</p>
             <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              src="http://openweathermap.org/img/wn/${forecastDay.data.weather[0].icon}@2x.png"
             />
           </div> `;
   });
@@ -72,6 +72,7 @@ function showWind(response) {
   let messageW = `Wind: ${wind} km/h`;
   let windW = document.querySelector("#wind");
   windW.innerHTML = messageW;
+  getForecast(response.data.coord);
 }
 
 function showCloud(response) {
@@ -95,8 +96,6 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
-  getForecast(response.data.coord);
 }
 
 function search(event) {
