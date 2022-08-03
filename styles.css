@@ -22,7 +22,7 @@ li {
   padding-left: 0;
 }
 .container {
-  background-color: #edf4ff;
+  background: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
   border-radius: 10px;
   margin: 20px auto;
   max-width: 650px;
@@ -60,4 +60,14 @@ li {
 }
 .active:hover {
   text-decoration: none;
+}
+.weather-forecast {
+  text-align: center;
+}
+.col-2-p {
+  text-align: center;
+}
+.col-2-img {
+  display: block;
+  margin: 0 auto;
 }

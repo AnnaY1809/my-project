@@ -50,7 +50,7 @@ function displayForecast(response) {
         `
           <div class="col-2">
             ${formatDay(forecastDay.dt)}
-            <p>${Math.round(forecastDay.temp.day)} C</p>
+            <p>${Math.round(forecastDay.temp.day)} ℃</p>
             <img
               src="http://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon
